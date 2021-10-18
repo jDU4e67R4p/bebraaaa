@@ -97,6 +97,5 @@ async def on_message(message):
     #message2 = await channel.send(message.author.mention + ", вы успешно оставили своё обращение! Перейдите в канал " + channel2.mention + " для просмотра ответа.")
     await asyncio.sleep(5)
 
-#token = os.environ.get('BOT_TOKEN')
-#Bot.run( str(token) )
-Bot.run('ODk5MjAyNzY0NTExNTE0NjI0.YWvV1Q.t96_9g6kYcUSZhAB_mlkwkJ8zpM')
+token = os.environ.get('BOT_TOKEN')
+Bot.run( str(token) )
