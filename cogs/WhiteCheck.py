@@ -27,7 +27,6 @@ class WhiteCheck(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         channel = message.channel
-        channel2 = self.Bot.get_channel(899739763018457128)
         support_channel = self.Bot.get_channel(899661397959516241)
         isBot = message.author.bot
         if(message.author.bot): return
@@ -39,7 +38,6 @@ class WhiteCheck(commands.Cog):
         emb.set_footer(text=f"{message.author.display_name}", icon_url = message.author.avatar_url)
         emb.add_field( name = 'Ник который был добавлен:', value = '`{}`'.format(message.content) )
         await channel.send(embed=emb)
-        await channel2.send('easywl add {}'.format(message.content))
         await message.author.edit(nick='{}'.format(message.author.display_name) + ' ({})'.format(message.content))
         await asyncio.sleep(5)
         await self.Bot.process_commands(message)
