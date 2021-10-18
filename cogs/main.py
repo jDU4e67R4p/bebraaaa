@@ -26,7 +26,7 @@ class Main(commands.Cog):
 
 	@commands.Cog.listener()
 	async def on_ready(self):
-		activity = discord.Game(name = "HoverDive | .help", url='https://twitch.com/zan4egpayne')
+		activity = discord.Game(name = "HoverDive | Created by Zan4eg#5557", url='https://twitch.com/zan4egpayne')
 		await self.Bot.change_presence( status = discord.Status.online, activity = activity )
 		print("Logged in as HoverDive!")
 		print("HoverDive Copyright 2021 By Zan4eg#5557")
