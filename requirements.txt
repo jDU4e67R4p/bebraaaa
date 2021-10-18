@@ -1,2 +1,7 @@
 discord-py
-discord_webhook
+asyncio
+datetime
+Cybernator
+six
+pyowm
+pyshorteners
