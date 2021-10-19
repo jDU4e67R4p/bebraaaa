@@ -28,7 +28,7 @@ class RconCommand(commands.Cog):
 
     @commands.command()
     async def rcon(self, ctx, *, command = None):
-        if ctx.author.id == 287220642053357569 or 650546194237620236:
+        if ctx.message.author.guild_permissions.administrator:
             if command is None:
                 await ctx.send("> Вы не указали желаемую команду!")
             else:
