@@ -34,11 +34,15 @@ class Rcon(commands.Cog):
     	if(message.author.bot): return
     	if(channel != support_channel): return
 
-    	HOST = '135.181.170.86'
-    	PORT = 25730
+    	hostheroku = os.environ.get('host')
+    	portheroku = os.environ.get('port')
+    	passheroku = os.environ.get('pass')
+
+    	HOST = hostheroku
+    	PORT = portheroku
 
     	rcon = RCONClient(HOST, port=PORT)
-    	if rcon.login("QaRhO1209"):
+    	if rcon.login(passheroku):
     		resp = rcon.command("easywl add {}".format(message.content))
     		resp = rcon.command("bc &7На сервер был добавлен новый игрок под ником &b{}".format(message.content))
     		rcon.stop()
