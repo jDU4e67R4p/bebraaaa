@@ -24,6 +24,13 @@ from mctools import RCONClient
 Bot = commands.Bot(command_prefix = ".")
 Bot.remove_command("help")
 
+Bot.load_extension('cogs.Admins')
+Bot.load_extension('cogs.main')
+Bot.load_extension('cogs.News')
+Bot.load_extension('cogs.WhiteCheck')
+Bot.load_extension('cogs.Rcon')
+Bot.load_extension('cogs.RconCommand')
+
 @Bot.event
 async def on_command_error(ctx, error):
 	if isinstance(error, commands.CommandNotFound):
@@ -53,10 +60,6 @@ async def reload(ctx, extension):
 		await ctx.send("```Коги перезагружены...```")
 	else:
 		await ctx.send("```Вы не разработчик бота...```")
-		
-for filename in os.listdir("./cogs"):
-    if filename.endswith(".py") and not filename.startswith(""):
-        bot.load_extension(f"cogs.{filename[:-3]}")
 
 token = os.environ.get('BOT_TOKEN')
 Bot.run( str(token) )
