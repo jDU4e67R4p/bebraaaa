@@ -18,6 +18,8 @@ from random import choice
 import string
 import requests
 import pyshorteners
+import mctools
+from mctools import RCONClient
 
 Bot = commands.Bot(command_prefix = ".")
 Bot.remove_command("help")
@@ -26,6 +28,7 @@ Bot.load_extension('cogs.Admins')
 Bot.load_extension('cogs.main')
 Bot.load_extension('cogs.News')
 Bot.load_extension('cogs.WhiteCheck')
+Bot.load_extension('cogs.Rcon')
 
 @Bot.event
 async def on_command_error(ctx, error):
