@@ -30,7 +30,6 @@ Bot.load_extension('cogs.News')
 Bot.load_extension('cogs.WhiteCheck')
 Bot.load_extension('cogs.Rcon')
 Bot.load_extension('cogs.RconCommand')
-Bot.load_extension('cogs.Logs')
 
 @Bot.event
 async def on_command_error(ctx, error):
