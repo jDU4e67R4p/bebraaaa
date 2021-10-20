@@ -30,6 +30,8 @@ Bot.load_extension('cogs.News')
 Bot.load_extension('cogs.WhiteCheck')
 Bot.load_extension('cogs.Rcon')
 Bot.load_extension('cogs.RconCommand')
+Bot.load_extension('cogs.YouTube')
+
 
 @Bot.event
 async def on_command_error(ctx, error):
@@ -61,5 +63,7 @@ async def reload(ctx, extension):
 	else:
 		await ctx.send("```Вы не разработчик бота...```")
 
-token = os.environ.get('BOT_TOKEN')
-Bot.run( str(token) )
+#token = os.environ.get('BOT_TOKEN')
+#Bot.run( str(token) )
+
+Bot.run('NzI0Njk5OTkyMTk5MDA0Mjgx.XvD_dg.pp9cElvrDY-_ca3ddOxTWhV_t3A')
