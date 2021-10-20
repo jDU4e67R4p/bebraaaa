@@ -63,7 +63,5 @@ async def reload(ctx, extension):
 	else:
 		await ctx.send("```Вы не разработчик бота...```")
 
-#token = os.environ.get('BOT_TOKEN')
-#Bot.run( str(token) )
-
-Bot.run('NzI0Njk5OTkyMTk5MDA0Mjgx.XvD_dg.pp9cElvrDY-_ca3ddOxTWhV_t3A')
+Token = os.environ.get('BOT_TOKEN')
+Bot.run( str(token) )

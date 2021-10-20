@@ -3,6 +3,8 @@ import requests
 import discord
 from discord.ext import commands
 
+token = os.environ.get('BOT_TOKEN')
+
 class YouTube(commands.Cog):
 
     def __init__(self, Bot):
@@ -19,7 +21,7 @@ class YouTube(commands.Cog):
             "validate": None
         }
         headers = {
-            "Authorization": "Bot NzI0Njk5OTkyMTk5MDA0Mjgx.XvD_dg.pp9cElvrDY-_ca3ddOxTWhV_t3A",
+            "Authorization": f"Bot {token}",
             "Content-Type": "application/json"
         }
         if ctx.author.voice is not None:
@@ -33,7 +35,7 @@ class YouTube(commands.Cog):
         response = requests.post(f"https://discord.com/api/v8/channels/{channel}/invites", data=json.dumps(data), headers=headers)
         link = json.loads(response.content)
 
-        await ctx.send(f"> Ваше активити создано. Подключайтесь по ссылке: \n https://discord.com/invite/{link['code']}")
+        await ctx.send(f"> Совеместный просмотр ютуб! Подключайтесь по ссылке: \n https://discord.com/invite/{link['code']}")
 
 def setup(Bot):
     Bot.add_cog(YouTube(Bot))
