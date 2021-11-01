@@ -31,6 +31,7 @@ Bot.load_extension('cogs.WhiteCheck')
 Bot.load_extension('cogs.Rcon')
 Bot.load_extension('cogs.RconCommand')
 Bot.load_extension('cogs.YouTube')
+Bot.load_extension('cogs.Info')
 
 
 @Bot.event
