@@ -16,7 +16,7 @@ class Info(commands.Cog):
         status = server.status()
         emb = discord.Embed( title="", colour=0x8721ED ) # Создаем ембед
         emb.add_field( name=':bust_in_silhouette: Онлайн HoverDive', value='Игроков на сервере: ` {0} `'.format(status.players.online) )
-        emb.add_field( name='<:player:904740455885963274> Игроки на сервере:', value='` {0} `'.format(", ".join(query.players.names)) )
+        emb.add_field( name='<:player:904740455885963274> Задержка сервера:', value='` {0} `мс.'.format(latency)) )
         await ctx.send( embed = emb )
 
 def setup(Bot):
