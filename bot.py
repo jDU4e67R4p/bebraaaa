@@ -33,7 +33,7 @@ Bot.load_extension('cogs.RconCommand')
 Bot.load_extension('cogs.YouTube')
 Bot.load_extension('cogs.Info')
 
-@Bot.event()
+@Bot.event
 async def on_message(message):
 	if message.content == ':zan4eg:':
 		emb=discord.Embed( title = '', colour= 0xff8c00 )
