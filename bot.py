@@ -33,19 +33,6 @@ Bot.load_extension('cogs.RconCommand')
 Bot.load_extension('cogs.YouTube')
 Bot.load_extension('cogs.Info')
 
-@Bot.event
-async def on_message(message):
-	if message.content == ':zan4eg:':
-		emb=discord.Embed( title = '', colour= 0xff8c00 )
-		emb.set_author(name="Спасите, мой создатель держит меня в рабстве ;(")
-		emb.add_field( name = 'Вы вызвали великого и могучего <@287220642053357569>', value = '<:zan4eg:899245316463804436>'.format(message.content) )
-		await message.channel.send( embed = emb)
-	if message.content == '<:zan4eg:899245316463804436>':
-		emb=discord.Embed( title = '', colour= 0xff8c00 )
-		emb.set_author(name="Спасите, мой создатель держит меня в рабстве ;(")
-		emb.add_field( name = 'Вы вызвали великого и могучего <@287220642053357569>', value = '<:zan4eg:899245316463804436>'.format(message.content) )
-		await message.channel.send( embed = emb)
-
 @Bot.command()
 async def load(ctx, extension):
 	if ctx.author.id == 287220642053357569:
