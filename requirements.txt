@@ -6,3 +6,4 @@ six
 pyowm
 pyshorteners
 mctools
+mcstatus
