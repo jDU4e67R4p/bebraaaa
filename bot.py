@@ -32,6 +32,7 @@ Bot.load_extension('cogs.Rcon')
 Bot.load_extension('cogs.RconCommand')
 Bot.load_extension('cogs.YouTube')
 Bot.load_extension('cogs.Info')
+Bot.load_extension('cogs.music')
 
 @Bot.command()
 async def load(ctx, extension):
