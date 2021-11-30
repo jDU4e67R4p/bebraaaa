@@ -15,7 +15,7 @@ from random import shuffle
 
 from .resources.AutomatedMessages import automata
 from .resources.equalizers import equalizers
-from .resources.music.frimePlayer import FrimePlayer
+from .resources.music.frimePlayer import HoverDivePlayer
 from .resources.music.filters import *
 
 RURL = re.compile('https?:\/\/(?:www\.)?.+')
