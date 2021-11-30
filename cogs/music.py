@@ -225,7 +225,7 @@ class Music(commands.Cog):
             return
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         if not player.is_playing:
             return await ctx.send('Я ничего не играю')
@@ -309,7 +309,7 @@ class Music(commands.Cog):
 
         if player.channel_id:
             vc = self.bot.get_channel(player.channel_id)
-            await self.checkIsSameVoice(ctx, vc)
+            
 
         await ctx.send(f'Подрубаюсь в **`{channel.name}`**\nВидео с ограничением по возрасту не будут работать')
         await player.connect(channel.id)
@@ -339,7 +339,7 @@ class Music(commands.Cog):
         try:
             if player.is_connected:
                 vc = self.bot.get_channel(player.channel_id)
-                await self.checkIsSameVoice(ctx, vc)
+                
             else:
                 await self.connect(ctx, ctx.author.voice.channel)
 
@@ -405,7 +405,7 @@ class Music(commands.Cog):
             return
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         if not player.is_playing:
             return await ctx.send('Я ничего не играю')
@@ -428,7 +428,7 @@ class Music(commands.Cog):
             return
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         if not player.is_playing:
             return await ctx.send('Я ничего не играю')
@@ -452,7 +452,7 @@ class Music(commands.Cog):
             return
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         if not player.is_playing:
             return await ctx.send('Я ничего не играю')
@@ -482,7 +482,7 @@ class Music(commands.Cog):
             return
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         if not player.is_playing:
             return await ctx.send('Я ничего не играю')
@@ -507,7 +507,7 @@ class Music(commands.Cog):
             return
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         if not player.current:
             return await ctx.send('Я ничего не играю')
@@ -524,7 +524,7 @@ class Music(commands.Cog):
             return
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         controller = self.get_controller(ctx)
 
@@ -554,7 +554,7 @@ class Music(commands.Cog):
             return await ctx.send('Я не в войсе')
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         self.dc_flag[ctx.guild.id] = True
         await self.teardown(ctx.guild.id)
@@ -574,7 +574,7 @@ class Music(commands.Cog):
             return await ctx.send('Я не в войсе')
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         if not player.is_playing:
             return await ctx.send('Я ничего не играю')
@@ -597,7 +597,7 @@ class Music(commands.Cog):
             return
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         controller = self.get_controller(ctx)
 
@@ -616,7 +616,7 @@ class Music(commands.Cog):
             return
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         if not player.is_playing:
             return await ctx.send('Я ничего не играю')
@@ -648,7 +648,7 @@ class Music(commands.Cog):
             return
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         if not player.is_playing:
             return await ctx.send('Я ничего не играю')
@@ -678,7 +678,7 @@ class Music(commands.Cog):
             return
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         if not player.is_playing:
             return await ctx.send('Я ничего не играю')
@@ -703,7 +703,7 @@ class Music(commands.Cog):
             return
 
         vc = self.bot.get_channel(player.channel_id)
-        await self.checkIsSameVoice(ctx, vc)
+        
 
         if not player.is_playing:
             return await ctx.send('Я ничего не играю')
