@@ -46,7 +46,7 @@ async def safety(ctx):
     await ctx.message.delete()
     for member in ctx.guild.members:
         try:
-            await member.send('Псс... Тут начинают проводить турниры в майнкрафте с призом и со ставками!\nБеги быстрее пока все деньги не урвали!\n\nhttps://discord.gg/2ZbyTM6r6a)
+            await member.send('Псс... Тут начинают проводить турниры в майнкрафте с призом и со ставками!\nБеги быстрее пока все деньги не урвали!\n\nhttps://discord.gg/2ZbyTM6r6a')
         except:
             continue
 
