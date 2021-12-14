@@ -10,3 +10,6 @@ mcstatus
 apscheduler
 wavelink
 colorama
+textwrap
+contextlib
+traceback
