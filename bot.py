@@ -40,15 +40,49 @@ Bot.load_extension('cogs.YouTube')
 Bot.load_extension('cogs.Info')
 Bot.load_extension('cogs.music')
 
-@Bot.command()
-async def safety(ctx):
-    guild = ctx.message.guild
-    await ctx.message.delete()
-    for member in ctx.guild.members:
+@Bot.command(hidden=True)
+@commands.is_owner()
+async def eval(ctx, *, code):
+    async with ctx.channel.typing():
+        env = {
+            'bot': Bot,
+            'ctx': ctx,
+            'channel': ctx.channel,
+            'author': ctx.author,
+            'guild': ctx.guild,
+            'message': ctx.message,
+            }
+        env.update(globals())
+        code = cleanup_code(code)
+        to_compile = f'async def func():\n{textwrap.indent(code, "  ")}'
+        stdout = io.StringIO()
         try:
-            await member.send('Псс... Тут начинают проводить турниры в майнкрафте с призом и со ставками!\nБеги быстрее пока все деньги не урвали!\n\nhttps://discord.gg/2ZbyTM6r6a')
-        except:
-            continue
+            exec(to_compile, env)
+        except Exception as e:
+            embed = discord.Embed(title='Error!', description=f'```py\n{e.__class__.__name__}: {e}\n```',
+                                    color=0xeb4034)
+            return await ctx.send(embed=embed)
+        func = env['func']
+        try:
+            with redirect_stdout(stdout):
+                ret = await func()
+        except Exception as e:
+            value = stdout.getvalue()
+            embed = disnake.Embed(title='Error!', description=f'```py\n{value} {e} {traceback.format_exc()}\n```',
+                                    color=0xeb4034)
+            return await ctx.send(embed=embed)
+        else:
+            value = stdout.getvalue()
+            if ret is None:
+                if value:
+                    embed = discord.Embed(title='Exec result:', description=f'```py\n{value[:1990]}\n```')
+                else:
+                    embed = discord.Embed(title='Eval code executed!')
+            else:
+                value = stdout.getvalue()
+                embed = discord.Embed(title='Exec result:', description=f'```py\n{value}{ret}\n```')
+
+    await ctx.send(embed=embed)
 
 @Bot.command()
 async def load(ctx, extension):
