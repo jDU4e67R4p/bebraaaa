@@ -23,6 +23,9 @@ from mctools import RCONClient
 import textwrap
 from contextlib import redirect_stdout
 import traceback
+import string
+import io
+import os
 
 Bot = commands.Bot(command_prefix = ".")
 Bot.remove_command("help")
