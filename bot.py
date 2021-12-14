@@ -39,7 +39,7 @@ Bot.load_extension('cogs.music')
 async def eval(ctx, *, code):
     async with ctx.channel.typing():
         env = {
-            'bot': client,
+            'bot': Bot,
             'ctx': ctx,
             'channel': ctx.channel,
             'author': ctx.author,
