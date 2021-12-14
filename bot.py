@@ -34,6 +34,11 @@ Bot.load_extension('cogs.YouTube')
 Bot.load_extension('cogs.Info')
 Bot.load_extension('cogs.music')
 
+def cleanup_code(content):
+    if content.startswith('```') and content.endswith('```'):
+        return '\n'.join(content.split('\n')[1:-1])
+    return content.strip('` \n')
+
 @Bot.command(hidden=True)
 @commands.is_owner()
 async def eval(ctx, *, code):
