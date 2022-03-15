@@ -2,3 +2,4 @@ asyncio
 aiogram
 requests
 beautifulsoup4
+pyqiwip2p
