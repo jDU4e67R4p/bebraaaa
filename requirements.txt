@@ -1,12 +1,2 @@
-discord-py
 asyncio
-datetime
-Cybernator
-six
-pyowm
-pyshorteners
-mctools
-mcstatus
-apscheduler
-wavelink
-colorama
+aiogram
